@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "./components/Counter.jsx";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -11,6 +12,15 @@ class App extends React.Component {
     }
 
   }
+
+  decrementCount = ()=> {
+
+  }
+
+  incrementCount = ()=>{
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,6 +29,7 @@ class App extends React.Component {
         <h2>{ this.state.count}</h2>
         <button onClick={this.decrementCount}>-</button>
         <button onClick={this.incrementCount}>+</button>
+        < Counter/>
 
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
