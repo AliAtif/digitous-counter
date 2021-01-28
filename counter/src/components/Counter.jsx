@@ -8,10 +8,15 @@ class Counter extends React.Component{
         return(
 
             <div>
-                {/* <h2>{ this.state.count}</h2>
-                <button onClick={this.decrementCount}>-</button>
-                <button onClick={this.incrementCount}>+</button> */}
-
+                <h2>{this.props.resultatDuCounter}</h2>
+                <div>
+                    <button className="btn btn-primary" onClick={this.props.retire}>
+                    -
+                    </button>
+                    <button className="btn btn-secondary" onClick={this.props.ajoute}>
+                    +
+                    </button>
+                </div>
             </div>
         )
     }
