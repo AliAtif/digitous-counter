@@ -21,7 +21,7 @@ class App extends React.Component {
      this.selectAdd = this.selectAdd.bind(this);
      this.selectList = this.selectList.bind(this);
      this.selectPay = this.selectPay.bind(this);
-     this.addItem = this.addItem.bind(this);
+     this.add = this.add.bind(this)
   }
 
   selectAdd(event){
@@ -43,31 +43,34 @@ class App extends React.Component {
   selectPay(event){
     this.setState({
       activeTab : "pay"
-    }
-      
+    }  
     ) 
   }
  
-  addItem(name, price){
-  
+  add(name, price){
+    const obj = {
+      name: name,
+      price: price
+    }
+    const newList = this.state.items
+    newList.push(obj)
+    this.setState({
+      items: newList
+    })
    
   }
 
   checkTab=()=>{
     switch(this.state.activeTab){
       case 'add':
-        return <Add></Add>
-
+        return <Add addItem={this.add}></Add>
       case 'list':
-        return <List></List>
-
+        return <List listItems={this.state.items}></List>
       case 'pay':
         return <Pay></Pay>
 
-      default:
     }
   }
-
 
 
   render() {
