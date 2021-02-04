@@ -4,6 +4,8 @@ import Add from "./composants/Add";
 import Button from "./composants/Button";
 import List from "./composants/List";
 import Pay from "./composants/Pay";
+import Card from "./composants/Card";
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 // import { Button } from "bootstrap";

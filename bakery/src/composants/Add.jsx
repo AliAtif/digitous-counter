@@ -21,7 +21,6 @@ class Add extends React.Component{
             productName: event.target.value
             
         })
-
     }
 
 
