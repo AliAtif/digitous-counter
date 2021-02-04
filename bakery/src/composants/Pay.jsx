@@ -15,7 +15,11 @@ class Pay extends React.Component{
     }
 
      handleSelect =(name, price)=>{
-        console.log("name", name )
+       
+        const obj ={
+            name: name,
+            price: price
+        }
 
         this.props.onClick(this.state.name, this.state.price)
     }

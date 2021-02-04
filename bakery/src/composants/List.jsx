@@ -11,6 +11,8 @@ class List extends React.Component{
                     return ( <li>{curr.name} - {curr.price} </li>)
                 })}
             </ul>
+            
+            
         )
     }
 }
