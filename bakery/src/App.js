@@ -1,97 +1,96 @@
 
-import React from "react";
-import Add from "./composants/Add";
-import Button from "./composants/Button";
-import List from "./composants/List";
-import Pay from "./composants/Pay";
-import Card from "./composants/Card";
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-// import { Button } from "bootstrap";
+import React from "react";
+import Button from "./components/Button/Button";
+import Add from "./components/Add/Add";
+import List from "./components/List/List";
+import Pay from "./components/Pay/Pay";
 
 class App extends React.Component {
-
-  constructor(props){
-
-    super(props);
-     this.state = {
-       activeTab : "add",
-       items: [],
-     }
-
-     this.selectAdd = this.selectAdd.bind(this);
-     this.selectList = this.selectList.bind(this);
-     this.selectPay = this.selectPay.bind(this);
-     this.add = this.add.bind(this)
+  constructor() {
+    super();
+    this.state = {
+      activeTabs: "add",
+      items: [],
+    };
+    this.selectAdd = this.selectAdd.bind(this);
+    this.selectList = this.selectList.bind(this);
+    this.selectPay = this.selectPay.bind(this);
+    this.add = this.add.bind(this);
   }
 
-  selectAdd(event){
+  selectAdd(e) {
+    console.log(e);
     this.setState({
-     activeTab : "add"
-    }
-    )
-    
+      activeTabs: "add",
+    });
   }
 
-  selectList(event){
+  selectList() {
     this.setState({
-      activeTab : "list"
-    }
-     
-    ) 
+      activeTabs: "list",
+    });
   }
 
-  selectPay(event){
+  selectPay() {
     this.setState({
-      activeTab : "pay"
-    }  
-    ) 
+      activeTabs: "pay",
+    });
   }
- 
-  add(name, price){
+
+  add(name, price) {
     const obj = {
       name: name,
-      price: price
-    }
-    const newList = this.state.items
-    newList.push(obj)
+      price: parseInt(price),
+    };
+    const newList = this.state.items;
+    newList.push(obj);
     this.setState({
-      items: newList
-    })
-   
+      items: newList,
+    });
   }
 
-  checkTab=()=>{
-    switch(this.state.activeTab){
-      case 'add':
-        return <Add addItem={this.add}></Add>
-      case 'list':
-        return <List listItems={this.state.items}></List>
-      case 'pay':
-        return <Pay items={this.state.items}></Pay>
-
+  renderContent = () => {
+    switch (this.state.activeTabs) {
+      case "add":
+        return <Add addItem={this.add}></Add>;
+      case "list":
+        return <List listItems={this.state.items}></List>;
+      case "pay":
+        return <Pay items={this.state.items}></Pay>;
     }
-  }
-
+  };
 
   render() {
-
     return (
       <div className="App">
-  
-        <Button onClick={this.selectAdd} isSelected ={this.state.activeTab === "add" ?true:false}>Add</Button>  
-        <Button onClick={this.selectList} isSelected ={this.state.activeTab === "list" ?true:false}>List</Button>  
-        <Button onClick={this.selectPay} isSelected ={this.state.activeTab === "pay" ?true:false}>Pay</Button>
+        <Button
+          onClick={this.selectAdd}
+          isSelected={this.state.activeTabs === "add" ? true : false}
+        >
+          {" "}
+          Add{" "}
+        </Button>
+        <Button
+          onClick={this.selectList}
+          isSelected={this.state.activeTabs === "list" ? true : false}
+        >
+          {" "}
+          List{" "}
+        </Button>
+        <Button
+          onClick={this.selectPay}
+          isSelected={this.state.activeTabs === "pay" ? true : false}
+        >
+          {" "}
+          Pay{" "}
+        </Button>
 
-        {this.checkTab()}
-       
+        {this.renderContent()}
       </div>
-    )
+    );
   }
 }
 
 export default App;
-
-
-
