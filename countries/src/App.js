@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import "./components/card.css";
 import "./App.css";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ class App extends React.Component {
       region: "",
       flag: "",
     };
-  }
+  };
 
   componentDidMount() {
     this.getCountry("france");
