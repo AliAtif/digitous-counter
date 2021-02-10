@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom"; 
 
-import Home from "./Home.jsx";
-import Popular from "./Popular.jsx";
+import Home from "./components/Home.jsx";
+import Popular from "./components/Popular.jsx";
 import Card from "./components/Card.jsx";
-import Weekly from "./Weekly.jsx"
-import WeeklyBattle from "./WeeklyBattle.jsx"
-import PopularBattle from "./PopularBattle.jsx"
-import Favorites from "./Favorites.jsx"
+import Weekly from "./components/Weekly.jsx"
+import WeeklyBattle from "./components/WeeklyBattle.jsx"
+import PopularBattle from "./components/PopularBattle.jsx"
+import Favorites from "./components/Favorites.jsx"
 // import Error404 from "./components/Error404.jsx";
 
 class App extends React.Component {

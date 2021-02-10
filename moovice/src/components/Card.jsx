@@ -7,7 +7,14 @@ class Card extends React.Component{
 
     render(){
 
-        return
+        return(
+            <>
+            {this.props.movie.title}
+            <img src={`https://image.tmdb.org/t/p/w300/${this.props.movie.poster_path}`}/>
+            </>
+        )
+          
+        
     }
 
 }
