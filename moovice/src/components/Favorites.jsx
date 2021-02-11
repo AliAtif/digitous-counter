@@ -2,10 +2,28 @@
 
 
 import React from "react";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"; 
+ 
 
 
 class Favorites extends React.Component{
+
+    constructor(){
+        super();
+        this.state={
+
+            movies: [],
+            favIDs: "",
+        }
+    }
+
+
+    getStorage(){
+
+    }
+
+    getMovie(id){
+
+    } 
 
     render(){
 

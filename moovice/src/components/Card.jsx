@@ -1,7 +1,6 @@
 
-import React from "react";
-// import { BrowserRouter, Route, Link, Switch } from "react-router-dom"; 
-import Popular from "./Popular.jsx";
+import React from "react"; 
+import Popular from "./Popular";
 
 
 class Card extends React.Component{
