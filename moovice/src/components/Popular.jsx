@@ -1,6 +1,6 @@
 
 import React from "react";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"; 
+// import { BrowserRouter, Route, Link, Switch } from "react-router-dom"; 
 import Card from "./Card"
 
 
@@ -22,7 +22,7 @@ class Popular extends React.Component{
                      console.log(films.results);
 		        this.setState({ filmsList : films.results});
 	})
-	// .catch(error => console.error(error));
+	.catch(error => console.error(error));
     }
 
     render(){
@@ -31,16 +31,16 @@ class Popular extends React.Component{
 
             <>
                 <h1>Popular</h1>
-                {this.state.filmsList.map((film, index)=>{
-                    <Card movie={film, [index]}></Card>
+                {this.state.filmsList.map((film)=>{
+                    return(
+                    <Card movie={film}></Card>
+                    )
                 })}
-
-                
+   
             </>
-
-           
         )
     }
 
 }
 export default Popular;
+
