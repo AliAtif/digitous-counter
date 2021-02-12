@@ -13,6 +13,7 @@ class PopularBattle extends React.Component{
         this.state = {
             filmsList: [],
             currentBattle: 0,
+            
         }
     }
     
@@ -30,23 +31,32 @@ class PopularBattle extends React.Component{
 
     buttonClick=(n)=>{
        let num= n+2;
-       this.setState({currentBattle: num})
+       this.setState({currentBattle: num}); 
+    
+    //    localStorage.setItem("favorites", "film.id");
+    //    console.log(localStorage);
     }
 
     render(){
 
         return(
 
-            <>
-                <h1>PopularBattle</h1>
-                {this.state.filmsList.slice(this.state.currentBattle, this.state.currentBattle+2).map((film)=>{
-                    return(
-                        <button onClick={()=>this.buttonClick(this.state.currentBattle)}> <Card movie={film}></Card></button>
-                   
-                    )
-                })}
-   
-            </>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12">
+                        {/* <h3>PopularBattle</h3> */}
+                            {this.state.filmsList.slice(this.state.currentBattle, this.state.currentBattle+2).map((film)=>{
+                                return(
+                                 <button onClick={()=>this.buttonClick(this.state.currentBattle)
+                            
+                                    } style={{width: "100%"}}> <Card movie={film}></Card></button>
+                     
+                                )
+                                
+                             })}
+                    </div>         
+                </div>
+            </div>
         )
     }
 

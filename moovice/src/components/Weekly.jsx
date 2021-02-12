@@ -9,7 +9,7 @@ class Weekly extends React.Component{
     render(){
 
         return(
-            <h1>Weekly</h1>
+            <h3>Weekly</h3>
         )
     }
 

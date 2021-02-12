@@ -12,7 +12,7 @@ class Card extends React.Component{
                 <h3>Titre: {this.props.movie.title}</h3>
                 <h5>Année de sortie : {this.props.movie.release_date}</h5>
                  <img src={`https://image.tmdb.org/t/p/w300/${this.props.movie.poster_path}`}/>
-                 <h3>Description :</h3> {this.props.movie.overview}
+                 <h3 style={{padding:10}}>Description :</h3> <p style={{padding:10, textAlign:"center"}}>{this.props.movie.overview}</p>
               
             </>
         )

@@ -22,13 +22,14 @@ class Favorites extends React.Component{
     }
 
     getMovie(id){
+        // fetch("http://api.themoviedb.org/3/movie/{ID}?api_key=e39d71e9bd32c85990dcdff0b40c96e2")
 
     } 
 
     render(){
 
         return(
-            <h1>Favorites</h1>
+            <h3>Favorites</h3>
         )
     }
 
