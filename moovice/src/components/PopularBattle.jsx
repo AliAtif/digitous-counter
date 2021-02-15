@@ -29,15 +29,15 @@ class PopularBattle extends React.Component{
 	.catch(error => console.error(error));
     }
 
-    buttonClick=(n)=>{
+    buttonClick=(n, idMovie)=>{
        let num= n+2;
        this.setState({currentBattle: num}); 
-    
-    //    localStorage.setItem("favorites", "film.id");
-    //    console.log(localStorage);
+ 
     }
 
     render(){
+        if (this.state.filmsList.length === this.state.currentBattle)
+        return <h3 style={{textAlign:"center"}}>Vous avez parcouru tous les films</h3>;
 
         return(
 

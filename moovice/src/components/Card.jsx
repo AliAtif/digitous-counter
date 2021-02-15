@@ -1,6 +1,7 @@
 
 import React from "react"; 
 import Popular from "./Popular";
+import Favorites from "./Favorites"
 
 
 class Card extends React.Component{
